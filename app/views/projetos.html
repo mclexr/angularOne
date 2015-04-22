@@ -1,0 +1,55 @@
+<section class="cadastroProjetos">
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="nomeProjeto" class="col-sm-2 control-label">Nome</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" placeholder="Nome do projeto" name="nomeProjeto" autofocus ng-model="projeto.nome">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tecnologia" class="col-sm-2 control-label">Tecnologia</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" placeholder="Nome da tecnologia" name="tecnologia" ng-model="projeto.tecnologia">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button class="btn btn-primary" ng-click="adicionaProjeto()">Gravar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<h2 ng-show="projetos.length == 0">Não há projetos cadastrados.</h2>
+<section class="listaProjetos" ng-show="projetos.length > 0">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Projeto</th>
+                <th>Tecnologia</th>
+                <th>Concluido?</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="projeto in projetos">
+                <td>{{ projeto.nome }} </td>
+                <td>{{ projeto.tecnologia }} </td>
+                <td>
+                    <span ng-show="projeto.concluido"> Concluido </span>
+                    <span ng-show="!projeto.concluido"> Em andamento </span>
+                </td>
+                <td>
+                    <button ng-click="removeProjeto($index)" class="btn btn-danger btn-xs">Remover</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>

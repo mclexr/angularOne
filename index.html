@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <title>Inicio |ProjetoA</title>
+
+    <link href="app/resources/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="app/resources/css/geral.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="index.html"><img class="logo img-responsive" alt="Logotipo" src="app/resources/images/logo_64.png" />
+            </a>
+            <h2>Projeto Angular</h2>
+        </div>
+
+        <nav>
+            <ul class="nav nav-pills">
+                <li ng-class="{active: activetab == '/'}"><a href="/home">Home</a>
+                </li>
+                <li ng-class="{active: activetab == '/sobre'}"><a href="/sobre">Sobre</a>
+                </li>
+                <li ng-class="{active: activetab == '/contato'}"><a href="/contato">Contato</a>
+                </li>
+                <li ng-class="{active: activetab == '/projetos'}"><a href="/projetos">Projetos</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="container">
+
+        <div ng-view></div>
+    </section>
+
+    <footer>
+        <p>Porto Seguro Seguros (c) 2015. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controllers.js"></script>
+
+</body>
+
+</html>
